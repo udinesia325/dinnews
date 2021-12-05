@@ -1,0 +1,13 @@
+{
+  "short_name": "Dinnews",
+  "name": "Berita Terbaru hari ini",
+  "icons": [{
+    "src": "dinnews.png",
+    "sizes": "64x64 32x32 24x24 16x16",
+    "type": "image/x-icon"
+  }],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#08b6bc",
+  "background_color": "#000000"
+}

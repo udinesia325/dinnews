@@ -1,4 +1,4 @@
-import {lazy,Suspense,useState} from "react"
+import {lazy,Suspense,useState,useEffect} from "react"
 import {BrowserRouter as Router,Routes,Route } from "react-router-dom"
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -18,11 +18,16 @@ function App() {
   //cek apakah input kosong
   const [isEmpty,setIsEmpty] = useState(true)
   const [input,setInput] = useState("")
+  useEffect(()=>{
+    
+    setIsEmpty(input.length === 0)
+    
+  },[input])
   return (
     <div>
       <Router>
       {/*kirimkan ke input di navbar*/}
-      <Navbar setIsEmpty={setIsEmpty} setInput={setInput} input={input} />
+      <Navbar setInput={setInput} input={input} />
         <Suspense fallback={<Loading />}>
           <Routes>
              {/*hanya tampilkan ketika input ada isinya*/}

@@ -87,13 +87,11 @@ const NavStyle = styled.nav`
    }
 `;
 
-function Navbar({setIsEmpty,input,setInput}) {
+function Navbar({input,setInput}) {
   const [navShow,setNavShow] = useState(false)
   useEffect(()=>{
-    //atur apakah input kosong berdasarkan input
-    setIsEmpty(input.length === 0)
     setInput(input)
-  },[input])
+  },[input,setInput])
   const handleInput = (e) => {
     setInput(e.target.value)
   }
@@ -103,7 +101,7 @@ function Navbar({setIsEmpty,input,setInput}) {
   return (
     <NavStyle className="navbar fixed-top pb-0">
     <div className="container">
-      <div className="navbar-brand"><img src={dinnews} /></div>
+      <div className="navbar-brand"><img src={dinnews} alt={dinnews} /></div>
       <span className="navbar-toggler" onClick={()=> setNavShow(!navShow)}>&equiv;</span>
       <input placeholder="Search ...." value={input} onChange={handleInput}  />
       <ul className={navShow ? "nav-item show" : "nav-item"} onClick={()=> setNavShow(!navShow)}>

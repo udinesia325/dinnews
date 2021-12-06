@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
 const LoadingStyle = styled.div`
+  min-height:100vh;
   display:flex;
   justify-content:center;
+  align-items:center;
   gap:.5em;
   div{
     width:1em;
